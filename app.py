@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Impor Flask-CORS
 import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
@@ -6,6 +7,9 @@ import json
 
 # Initialize Flask app
 app = Flask(__name__)
+
+# Enable CORS for the entire app
+CORS(app)  # This will allow all domains by default
 
 # Load the saved model
 model = tf.keras.models.load_model('model.h5')
@@ -58,7 +62,6 @@ def predict():
 
     # Return hasil dalam JSON
     return jsonify(response)
-
 
 # Run the Flask app
 if __name__ == '__main__':
