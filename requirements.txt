@@ -1,1 +1,4 @@
 Flask==3.0.3
+Flask-CORS==3.1.1  
+TensorFlow==2.10.0
+Pandas==1.4.0
