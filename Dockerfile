@@ -1,0 +1,1 @@
+CMD ["gunicorn", "app:app"]
